@@ -27,6 +27,8 @@ yarn run:s
 
 각 액터들을 구현 한 뒤 퍼사드 패턴을 이용하여 이를 통합하여 보자.
 
+[![](https://mermaid.ink/img/pako:eNp1kcFuwyAMhl8F-bRp7QugXaa1Pe0wqVcuFvzp0BJABCJVXd59KGlWqjU-gf39tn_5QtobkCTdct_vLJ8id8qJEm_ORPCBNRuI15_tVhz2OwxofUBcQz5zCOcPP6wT775pgBVEipeq_vT8kAhIybrTNGoFMdG677nTQkwGawuXOS8KPaeOiIPVf4Kx1t183WSP9rgTVVaqYf9XG5fiHPc_2lCH2LE15UpTG0XpCx0UyfI0aDi3SZFyY0FzMJywNzb5SLLhtseGOCd_PDtNMsWMBboe-0qNv-otpro)](https://mermaid.live/edit#pako:eNp1kcFuwyAMhl8F-bRp7QugXaa1Pe0wqVcuFvzp0BJABCJVXd59KGlWqjU-gf39tn_5QtobkCTdct_vLJ8id8qJEm_ORPCBNRuI15_tVhz2OwxofUBcQz5zCOcPP6wT775pgBVEipeq_vT8kAhIybrTNGoFMdG677nTQkwGawuXOS8KPaeOiIPVf4Kx1t183WSP9rgTVVaqYf9XG5fiHPc_2lCH2LE15UpTG0XpCx0UyfI0aDi3SZFyY0FzMJywNzb5SLLhtseGOCd_PDtNMsWMBboe-0qNv-otpro)
+
 ``` typescript
 class AndreaFacade implements AndreaClass {
 	private readonly feDeveloper = new FEDeveloper()
