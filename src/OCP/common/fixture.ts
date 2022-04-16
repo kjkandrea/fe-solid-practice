@@ -1,6 +1,6 @@
 type Nation = 'KR'|'US'|'JP'|'UK'|'NL'
 
-interface Passport {
+export interface Passport {
 	name: string,
 	nation: Nation,
 	crime: boolean,

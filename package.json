@@ -3,7 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "run:s": "ts-node src/SRP/index.ts"
+    "run:s": "ts-node src/SRP/index.ts",
+    "run:o": "ts-node src/OCP/index.ts"
   },
   "devDependencies": {
     "ts-node": "^10.7.0",
