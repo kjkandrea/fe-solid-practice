@@ -1,4 +1,4 @@
-class CoffeeController {
+class CoffeeLimitController {
 	private todayCoffeeCount = Infinity;
 
 	constructor(coffeeLimit: number) {
@@ -13,7 +13,7 @@ class CoffeeController {
 }
 
 export default class CoffeeLover {
-	private readonly coffeeController = new CoffeeController(2)
+	private readonly coffeeController = new CoffeeLimitController(2)
 
 	drink = this.coffeeController.drink;
 }
