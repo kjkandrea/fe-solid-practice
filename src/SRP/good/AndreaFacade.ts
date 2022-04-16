@@ -4,14 +4,10 @@ import CoffeeLover from "./subSystem/CoffeeLover";
 import AndreaClass from "../common/andrea.interface";
 
 /**
- * Andrea 생성자는 단일책임 원칙에 위배된다.
- * 다음 세가지 메서드를 가진다.
- * * developService : 서비스를 개발한다. 리턴값은 수행 여부
- * * pettingPuppy : 강아지를 쓰다듬는다.
- * * drinkCoffee : 커피를 마신다.
+ * AndreaFacade 생성자는 퍼사드 패턴으로 통합 인터페이스를 제공한다.
+ * 이 클래스는 세 클래스의 객체를 생성하고, 요청된 메서드를 가지는 객체로 위임하는 일을 책임진다.
  *
- *  개발자가 이 세 메서드를 Andrea 라는 단일 클래스에 배치하여 세 액터가 서로 결합되어 버렸다.
- *  두 명의 서로 다른 개발자가 Andrea 클래스를 동시 개발할 경우 SRP 위반 징후인 '병합' 이 나타날 가능성이 높다.
+ * 이처럼 여러 메서드가 하나의 가족을 이루고, 메서드의 가족을 포함하는 각 클래스는 하나의 유효 범위가 된다.
  */
 export default class AndreaFacade implements AndreaClass {
 	private readonly feDeveloper = new FEDeveloper()
