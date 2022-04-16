@@ -2,7 +2,7 @@ import {Service} from "../common/Service";
 import {FEService} from "../common/FEService";
 
 /**
- * Andrea 생성자는 SRP 원칙에 위배된다.
+ * Andrea 생성자는 단일책임 원칙에 위배된다.
  * 다음 세가지 메서드를 가진다.
  * * developService : 서비스를 개발한다. 리턴값은 수행 여부
  * * pettingPuppy : 강아지를 쓰다듬는다.
