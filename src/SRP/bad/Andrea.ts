@@ -1,4 +1,4 @@
-import {Service} from "../common/Service";
+import {ServiceClass} from "../common/Service";
 import {FEService} from "../common/FEService";
 
 /**
@@ -23,7 +23,7 @@ export default class Andrea {
 		}
 	}
 
-	public developService (service: Service) {
+	public developService (service: ServiceClass) {
 		return service instanceof this.roll
 	}
 
