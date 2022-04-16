@@ -19,7 +19,7 @@ export default class Andrea {
 	}
 
 	pettingPuppy () {
-		return this.puppy ? 'pet pet' : 'no puppy'
+		return this.puppy ? 'pet pet 🐶' : 'no puppy 😭'
 	}
 
 	drinkCoffee () {
