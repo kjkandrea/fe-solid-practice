@@ -1,9 +1,9 @@
-import AndreaFacade from "./AndreaFacade";
-import {FEService} from "../common/FEService";
-import {BEService} from "../common/BEService";
+import Andrea from "./good/AndreaFacade";
+import {FEService} from "./common/FEService";
+import {BEService} from "./common/BEService";
 
 (function main() {
-	const andrea = new AndreaFacade()
+	const andrea = new Andrea()
 	const dashboardService = new FEService({ name : 'dashboard' })
 	const apiService = new BEService({ name : 'api' })
 
