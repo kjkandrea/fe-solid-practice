@@ -25,7 +25,7 @@ yarn run:s
 * `developService()` 는 강아지를 쓰다듬는 메서드 이다. 
 * `developService()` 는 커피를 마시는 메서드 이다. 
 
-이를 단일 클래스로 구현하면 다음과 같다. : [bad/Andrea.ts](src/SRP/bad/Andrea.ts)
+이를 단일 클래스로 구현하면 다음과 같다. : [src/SRP/bad/Andrea.ts](src/SRP/bad/Andrea.ts)
 
 각 액터들을 구현 한 뒤 퍼사드 패턴을 이용하여 이를 통합하여 보자.
 
