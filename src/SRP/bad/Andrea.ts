@@ -1,7 +1,8 @@
 import {ServiceClass} from "../common/Service";
 import {FEService} from "../common/FEService";
+import AndreaClass from "../common/andrea.interface";
 
-export default class Andrea {
+export default class Andrea implements AndreaClass {
 	private readonly roll = FEService; // andrea is fe developer
 	private readonly puppy = null
 	private readonly coffee = {
