@@ -25,6 +25,8 @@ yarn run:s
 * `developService()` 는 강아지를 쓰다듬는 메서드 이다. 
 * `developService()` 는 커피를 마시는 메서드 이다. 
 
+이를 단일 클래스로 구현하면 다음과 같다. : [bad/Andrea.ts](src/SRP/bad/Andrea.ts)
+
 각 액터들을 구현 한 뒤 퍼사드 패턴을 이용하여 이를 통합하여 보자.
 
 [![](https://mermaid.ink/img/pako:eNp1kcFuwyAMhl8F-bRp7QugXaa1Pe0wqVcuFvzp0BJABCJVXd59KGlWqjU-gf39tn_5QtobkCTdct_vLJ8id8qJEm_ORPCBNRuI15_tVhz2OwxofUBcQz5zCOcPP6wT775pgBVEipeq_vT8kAhIybrTNGoFMdG677nTQkwGawuXOS8KPaeOiIPVf4Kx1t183WSP9rgTVVaqYf9XG5fiHPc_2lCH2LE15UpTG0XpCx0UyfI0aDi3SZFyY0FzMJywNzb5SLLhtseGOCd_PDtNMsWMBboe-0qNv-otpro)](https://mermaid.live/edit#pako:eNp1kcFuwyAMhl8F-bRp7QugXaa1Pe0wqVcuFvzp0BJABCJVXd59KGlWqjU-gf39tn_5QtobkCTdct_vLJ8id8qJEm_ORPCBNRuI15_tVhz2OwxofUBcQz5zCOcPP6wT775pgBVEipeq_vT8kAhIybrTNGoFMdG677nTQkwGawuXOS8KPaeOiIPVf4Kx1t183WSP9rgTVVaqYf9XG5fiHPc_2lCH2LE15UpTG0XpCx0UyfI0aDi3SZFyY0FzMJywNzb5SLLhtseGOCd_PDtNMsWMBboe-0qNv-otpro)
@@ -41,7 +43,7 @@ class AndreaFacade implements AndreaClass {
 }
 ```
 
-AndreaFacade 생성자는 퍼사드 패턴으로 통합 인터페이스를 제공한다.
+[AndreaFacade 생성자](src/SRP/good/AndreaFacade.ts)는 퍼사드 패턴으로 통합 인터페이스를 제공한다.
 이 클래스는 세 클래스의 객체를 생성하고, 요청된 메서드를 가지는 객체로 위임하는 일을 책임진다.
 
 이처럼 여러 메서드가 하나의 가족을 이루고, 메서드의 가족을 포함하는 각 클래스는 하나의 유효 범위가 된다.
