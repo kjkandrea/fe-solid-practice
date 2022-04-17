@@ -4,10 +4,7 @@ import {passports} from "./common/fixture";
 (function main() {
 	const { permitPassports, banPassports, permitCount } = new ImmigrationOfficer(
 		passports,
-		passport => {
-
-			return !['JP', 'NZ'].includes(passport.nation) && !passport.crime
-		}
+		passport => !['JP', 'NZ'].includes(passport.nation) && !passport.crime
 	)
 
 	console.log('permitPassports : ', permitPassports)

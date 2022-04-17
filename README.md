@@ -7,7 +7,7 @@ yarn
 
 ## SRP : 단일 책임 원칙
 
-단일 책임 원칙(single responsibility principle)이란 모든 클래스는 하나의 책임만 가져야 한다는 원칙을 일컫는다.
+단일 책임 원칙(Single Responsibility Principle)이란 모든 클래스는 하나의 책임만 가져야 한다는 원칙을 일컫는다.
 
 > 하나의 모듈은 하나의 액터에 대해서만 책임져야 한다.
 
@@ -16,6 +16,8 @@ yarn
 ```bash
 yarn run:s 
 ```
+
+### `Andrea` 
 
 `Andrea` 객체는 다음과 같은 기능을 가질것이다.
 
@@ -49,3 +51,48 @@ class AndreaFacade {
 이처럼 여러 메서드가 하나의 가족을 이루고, 메서드의 가족을 포함하는 각 클래스는 하나의 유효 범위가 된다.
 
 이처럼 서로 다른 액터를 분리한 후 결합하여 SRP을 준수할 수 있다.
+
+## OCP : 개방-폐쇄 원칙
+
+개방-폐쇄 원칙(Open-Closed Principle) 은 소프트웨어 개체(클래스, 모듈, 함수 등등)는 확장에는 열려 있어야 하고, 수정에 대해서는 닫혀 있어야 한다는 원칙을 일컫는다.
+
+> 모듈 자체의 소스 코드를 수정하지 않아도 모듈의 기능을 확장하거나 변경할 수 있다.
+
+기능 변경에 있어 열려있는 클래스를 만들어보자.
+
+```bash
+yarn run:o 
+```
+
+### `ImmigrationOfficer`
+
+[복수개의 여권](src/OCP/common/fixture.ts)을 받아 특정 기준에 부합하게 여권을 심사하는 어플리케이션을 만들어보자.
+심사 현재 기준은 다음과 같다.
+
+* 네덜란드, 일본 여권은 반려 한다.
+* 범죄 여부가 조회되면 반려 한다.
+
+위 두 조건은 가변 조건이다. 소프트웨어 시스템은 사용자와 이해관계자를 만족 시키기 위해 항상 변경된다.
+행위를 변경/확장 할 수 있어야하지만, 이 때 개체를 변경해서는 안된다.
+
+``` ts
+class ImmigrationOfficer {
+	constructor(passports: Passport[], predict: (passport: Passport) => boolean) {
+		const { permitPassports, banPassports } = this.immigrationPassports(passports, predict)
+    }
+}
+```
+
+[ImmigrationOfficer 클래스](src/OCP/good/ImmigrationOfficer.ts)는 `predict` 이라는 조건을 평가하는 로직을 인자로 받은 후 이를 평가한다.
+
+이후 [사용부](src/OCP/index.ts)에서 평가 로직을 입력한다.
+
+```ts
+new ImmigrationOfficer(
+	passports, // 심사할 여권
+	passport => !['JP', 'NZ'].includes(passport.nation) && !passport.crime // 판단 기준
+)
+``` 
+
+이처럼 함수를 매개 변수로 받는 방법을 통해서 평가를 사용부에 위임함으로서 공통 로직과 가변되는 로직을 분리해서 다룰 수 있다.
+ 

@@ -15,12 +15,7 @@ export default class ImmigrationOfficer {
 		const banPassports: Passport[] = []
 
 		for (const passport of passports) {
-			if (['JP', 'NZ'].includes(passport.nation)) {
-				banPassports.push(passport)
-				continue
-			}
-
-			if (passport.crime) {
+			if (['JP', 'NZ'].includes(passport.nation) || passport.crime) {
 				banPassports.push(passport)
 				continue
 			}
