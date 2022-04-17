@@ -113,7 +113,7 @@ yarn run:l
 
 [이를 위배하는 예시](src/LSP/bad/hello.ts)는 다음과 같다.
 
-```ts
+```js
 class Hello {
   hello(name: string) {
     return `Hello, ${name}!`;
