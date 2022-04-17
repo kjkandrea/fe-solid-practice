@@ -111,7 +111,7 @@ new ImmigrationOfficer(
 yarn run:l 
 ```
 
-이를 지키지 않는 코드 예시는 다음과 같다.
+[이를 위배하는 예시](src/LSP/bad/hello.ts)는 다음과 같다.
 
 ```ts
 class Hello {
