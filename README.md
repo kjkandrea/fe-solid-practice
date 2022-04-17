@@ -1,4 +1,7 @@
 # fe-solid-practice
+
+> 클린 아키텍쳐 : 소프트웨어 구조와 설계의 원칙
+
 solid 원칙 다시 공부하기
 
 ```bash
@@ -151,3 +154,15 @@ TS2416: Property 'hello' in type 'HelloFriend' is not assignable to the same pro
   Type '(name: string, age: string) => string' is not assignable to type '(name: string) => string'.
 ```
 
+### 아키텍처 관점에서의 LSP 준수
+
+LSP 규칙은 클래스 상속 뿐만 아니라 '정의된 인터페이스와 그 인터페이스의 구현체끼리의 상호 치환 가능성에 기대는' 서비스 관점에서 생각해볼 수 있다.
+
+클린 아키텍처 책에서는 메인 시스템에서 정의한 인터페이스와, 그 인터페이스를 지키지 않은 서브 시스템으로 인해 발생하는 상황을 예로 든다.
+
+이 경우 메인 시스템에서 서브 시스템을 위해 예외 처리를 해주는것을 용납하여서는 안된다.
+
+클래스 상속관계 뿐만 아니라 아키텍쳐 관점에서도 다음과 같은 원칙을 준수하여야한다.
+
+> 부모 객체를 호출하는 동작에서 자식 객체가 부모 객체를 대체할 수 있어야 한다
+  
