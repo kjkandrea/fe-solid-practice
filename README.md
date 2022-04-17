@@ -22,8 +22,8 @@ yarn run:s
 [![](https://mermaid.ink/img/pako:eNpNj7sKwzAMRX_FaGppviBbabsXsnoRtpya-oUjB0LIv9fk0fZO4twDkmZQURO0oBwOw91in9HLIGpWIq5BZ0Ixb0yIi9A0koupozxaRafzr0nEbEP_LClN_1xnG963aAx99eVot0ADnrJHq-sp6y4J_CJPEto6ajJYHEuQYalqSRqZHtpyzNAadAM1gIVjNwUFLedCh7R_tFvLB3JCS3I)](https://mermaid.live/edit#pako:eNpNj7sKwzAMRX_FaGppviBbabsXsnoRtpya-oUjB0LIv9fk0fZO4twDkmZQURO0oBwOw91in9HLIGpWIq5BZ0Ixb0yIi9A0koupozxaRafzr0nEbEP_LClN_1xnG963aAx99eVot0ADnrJHq-sp6y4J_CJPEto6ajJYHEuQYalqSRqZHtpyzNAadAM1gIVjNwUFLedCh7R_tFvLB3JCS3I)
 
 * `developService()` 는 서비스를 개발하는 메서드 이다. 리턴값은 수행 가능 여부 boolean 이다.
-* `developService()` 는 강아지를 쓰다듬는 메서드 이다. 
-* `developService()` 는 커피를 마시는 메서드 이다. 
+* `pettingPuppy()` 는 강아지를 쓰다듬는 메서드 이다. 
+* `drinkCoffee()` 는 커피를 마시는 메서드 이다. 
 
 이를 단일 클래스로 구현하면 다음과 같다. : [src/SRP/bad/Andrea.ts](src/SRP/bad/Andrea.ts)
 
@@ -32,7 +32,7 @@ yarn run:s
 [![](https://mermaid.ink/img/pako:eNp1kc1qwzAQhF9F7CmlyQuIXkJ-TjkEctVlkcapqC0JWTKE1O9eY8fEodGe9PPNzg57J-0NSJKuuW33lq-RG-XEUFtnIvjImg3E1-9mI46HPTrUPiCWkHMO4XbyXZnY-aoCCogUn2ayuCB2VmP18RYKSMm66-hWQEy07mcym4kx4zLFfXoXJdd-qXtGe8rezfEiWqRdmP0frZ8_p3q90ZoaxIatGRY1tlGUvtFAkRyOBhXnOilSrh_QHAwnHIxNPpKsuG6xJs7JX25Ok0wxY4Ye-35Q_R-YoKgq)](https://mermaid.live/edit#pako:eNp1kc1qwzAQhF9F7CmlyQuIXkJ-TjkEctVlkcapqC0JWTKE1O9eY8fEodGe9PPNzg57J-0NSJKuuW33lq-RG-XEUFtnIvjImg3E1-9mI46HPTrUPiCWkHMO4XbyXZnY-aoCCogUn2ayuCB2VmP18RYKSMm66-hWQEy07mcym4kx4zLFfXoXJdd-qXtGe8rezfEiWqRdmP0frZ8_p3q90ZoaxIatGRY1tlGUvtFAkRyOBhXnOilSrh_QHAwnHIxNPpKsuG6xJs7JX25Ok0wxY4Ye-35Q_R-YoKgq)
 
 ``` typescript
-class AndreaFacade implements AndreaClass {
+class AndreaFacade {
 	private readonly feDeveloper = new FEDeveloper()
 	private readonly puppyLover = new PuppyLover()
 	private readonly coffeeLover = new CoffeeLover()
@@ -48,4 +48,4 @@ class AndreaFacade implements AndreaClass {
 
 이처럼 여러 메서드가 하나의 가족을 이루고, 메서드의 가족을 포함하는 각 클래스는 하나의 유효 범위가 된다.
 
-이처럼 서로다른 액터를 분리한 후 결합하여 SRP을 준수할 수 있다.
+이처럼 서로 다른 액터를 분리한 후 결합하여 SRP을 준수할 수 있다.
