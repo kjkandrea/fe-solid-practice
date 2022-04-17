@@ -106,3 +106,48 @@ new ImmigrationOfficer(
 
 * 하위 클래스에서 부모 클래스의 메서드에 다른 매개변수를 추가한다. 
 * 하위 클래스에서 부모 클래스의 메서드를 의도와 다르게 오버라이딩한다.
+
+```bash
+yarn run:l 
+```
+
+이를 지키지 않는 코드 예시는 다음과 같다.
+
+```ts
+class Hello {
+  hello(name: string) {
+    return `Hello, ${name}!`;
+  }
+}
+
+export class HelloFriend extends Hello {
+  // LSP 위반 : 하위 클래스에서 부모 클래스의 메서드에 다른 매개변수를 추가한다.
+  // @ts-ignore
+  hello(name: string, age: string) {
+    return `Hello, ${age} year old ${name}, have a nice day!`;
+  }
+}
+
+export class Bye extends Hello {
+  // LSP 위반 : 위 클래스에서 부모 클래스의 메서드를 의도와 다르게 오버라이딩한다.
+  // @ts-ignore
+  hello (name: string) {
+    throw new Error()
+  }
+
+  bye(name: string) {
+    return `Bye, ${name}!`;
+  }
+}
+```
+
+재밌게도 typescript 환경에서는 오버라이딩에 상위 유형을 그대로 리턴해야한다는 제약이 있어
+위와 같은 코드 자체가 성립하지 않는다. (incompatible override)
+
+때문에 @ts-ignore 를 추가 해주었다.
+
+```bash
+TS2416: Property 'hello' in type 'HelloFriend' is not assignable to the same property in base type 'Hello'. 
+  Type '(name: string, age: string) => string' is not assignable to type '(name: string) => string'.
+```
+
